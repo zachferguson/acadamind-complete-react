@@ -1,8 +1,8 @@
 import "./Expenses.css";
-import Card from "./Card";
+import Card from "../UI/Card";
 import ExpenseItem from "./ExpenseItem";
 
-let Expenses = (props) => {
+const Expenses = (props) => {
   let expenseList = props.expenses.map((expense, i) => {
     return (
       <ExpenseItem
