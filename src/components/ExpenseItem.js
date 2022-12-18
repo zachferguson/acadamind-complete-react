@@ -1,21 +1,17 @@
 import "./ExpenseItem.css";
-function ExpenseItem(props) {
-  let month = props.date.toLocaleString("en-US", { month: "long" });
-  let day = props.date.toLocaleString("en-US", { day: "2-digit" });
-  let year = props.date.getFullYear();
+import Card from "./Card";
+import ExpenseDate from "./ExpenseDate";
+
+let ExpenseItem = (props) => {
   return (
-    <div className="expense-item">
-      <div>
-        <div>{month}</div>
-        <div>{day}</div>
-        <div>{year}</div>
-      </div>
+    <Card className="expense-item">
+      <ExpenseDate date={props.date} />
       <div className="expense-item__description">
         <h2>{props.title}</h2>
         <div className="expense-item__price">${props.price}</div>
       </div>
-    </div>
+    </Card>
   );
-}
+};
 
 export default ExpenseItem;
