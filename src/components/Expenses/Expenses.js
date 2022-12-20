@@ -6,6 +6,7 @@ const Expenses = (props) => {
   let expenseList = props.expenses.map((expense, i) => {
     return (
       <ExpenseItem
+        key={i}
         title={expense.title}
         date={expense.date}
         price={expense.price}
