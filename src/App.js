@@ -28,9 +28,16 @@ const App = () => {
       price: 202.8,
     },
   ];
+
+  const addExpenseHandler = (expense) => {
+    console.log("from app.js with love");
+    expenses.push(expense);
+    console.log(expenses);
+  };
+
   return (
     <div>
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses expenses={expenses} />
     </div>
   );
