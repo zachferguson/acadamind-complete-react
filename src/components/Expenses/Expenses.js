@@ -6,13 +6,13 @@ import ExpenseItem from "./ExpenseItem";
 
 const Expenses = (props) => {
   const [selectedFilter, setSelectedFilter] = useState("2023");
-  let expenseList = props.expenses.map((expense, i) => {
+  let expenseList = props.expenses.map((expense, id) => {
     return (
       <ExpenseItem
-        key={i}
+        key={expense.id}
         title={expense.title}
         date={expense.date}
-        price={expense.price}
+        price={expense.amount}
       />
     );
   });
