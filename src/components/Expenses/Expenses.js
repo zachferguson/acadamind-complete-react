@@ -6,15 +6,8 @@ import ExpenseItem from "./ExpenseItem";
 
 const Expenses = (props) => {
   const [selectedFilter, setSelectedFilter] = useState("2023");
-  let expenseList = props.expenses.map((expense, id) => {
-    return (
-      <ExpenseItem
-        key={expense.id}
-        title={expense.title}
-        date={expense.date}
-        price={expense.amount}
-      />
-    );
+  let filteredExpenses = props.expenses.filter((ex) => {
+    return ex.date.getFullYear().toString() === selectedFilter;
   });
   const filterChangeHandler = (filterYear) => {
     setSelectedFilter(filterYear);
@@ -25,7 +18,16 @@ const Expenses = (props) => {
         onChangeFilter={filterChangeHandler}
         selected={selectedFilter}
       />
-      {expenseList}
+      {filteredExpenses.map((expense, id) => {
+        return (
+          <ExpenseItem
+            key={expense.id}
+            title={expense.title}
+            date={expense.date}
+            price={expense.amount}
+          />
+        );
+      })}
     </Card>
   );
 };

@@ -27,13 +27,24 @@ const initialExpenses = [
     title: "Jean Jacket.",
     amount: 202.8,
   },
+  {
+    id: "e5",
+    date: new Date(2021, 7, 11),
+    title: "Blue Raspbery Slushie",
+    amount: 3.0,
+  },
+  {
+    id: "e6",
+    date: new Date(2023, 1, 1),
+    title: "Beeper",
+    amount: 323.99,
+  },
 ];
 
 const App = () => {
   const [expenses, setExpenses] = useState(initialExpenses);
 
   const addExpenseHandler = (expense) => {
-    //setExpenses([expense, ...expenses]);
     setExpenses((previousExpenses) => {
       return [expense, ...previousExpenses];
     });
