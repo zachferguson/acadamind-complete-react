@@ -4,9 +4,16 @@ import "./NewExpense.css";
 const NewExpense = (props) => {
   const saveExpenseDataHandler = (newExpenseData) => {
     const expenseData = { ...newExpenseData, id: Math.random().toString() }; // could be a guid
-    //console.log(expenseData);
     props.onAddExpense(expenseData);
   };
+  if (true) {
+    return (
+      <div className="new-expense">
+        <button>Add Expense</button>
+      </div>
+    );
+  }
+
   return (
     <div className="new-expense">
       <ExpenseForm onSaveExpense={saveExpenseDataHandler} />

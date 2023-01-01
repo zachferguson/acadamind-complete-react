@@ -2,7 +2,7 @@ import "./Expenses.css";
 import { useState } from "react";
 import ExpensesFilter from "./ExpensesFilter";
 import Card from "../UI/Card";
-import ExpenseItem from "./ExpenseItem";
+import ExpensesList from "./ExpensesList";
 
 const Expenses = (props) => {
   const [selectedFilter, setSelectedFilter] = useState("2023");
@@ -18,16 +18,7 @@ const Expenses = (props) => {
         onChangeFilter={filterChangeHandler}
         selected={selectedFilter}
       />
-      {filteredExpenses.map((expense, id) => {
-        return (
-          <ExpenseItem
-            key={expense.id}
-            title={expense.title}
-            date={expense.date}
-            price={expense.amount}
-          />
-        );
-      })}
+      <ExpensesList items={filteredExpenses} />
     </Card>
   );
 };
