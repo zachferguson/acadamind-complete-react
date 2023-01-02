@@ -28,6 +28,7 @@ const ExpenseForm = (props) => {
     setEditedTitle("");
     setEditedAmount("");
     setEditedDate("");
+    props.onCancel(false);
   };
 
   return (
@@ -60,6 +61,11 @@ const ExpenseForm = (props) => {
             max="2023-12-31"
             onChange={dateChangeHandler}
           />
+        </div>
+        <div className="new-expense__actions">
+          <button type="button" onClick={() => props.onCancel(false)}>
+            Cancel
+          </button>
         </div>
         <div className="new-expense__actions">
           <button type="submit">Add Expense</button>

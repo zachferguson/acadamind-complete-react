@@ -36,23 +36,32 @@ const initialExpenses = [
   {
     id: "e6",
     date: new Date(2023, 1, 1),
-    title: "Beeper",
+    title: "Blinged Out New Beeper",
     amount: 323.99,
   },
 ];
 
 const App = () => {
   const [expenses, setExpenses] = useState(initialExpenses);
-
   const addExpenseHandler = (expense) => {
     setExpenses((previousExpenses) => {
       return [expense, ...previousExpenses];
     });
   };
 
+  // const[showAddNewExpense, setShowAddNewExpense] = useState(false);
+  // const addShowAddNewExpenseHandler = (showAddNewExpense) => {
+  //   setShowAddNewExpense(previousState => {
+
+  //   })
+  //};
+
   return (
     <div>
-      <NewExpense onAddExpense={addExpenseHandler} />
+      <NewExpense
+        onAddExpense={addExpenseHandler}
+        //showExpenses={false}
+      />
       <Expenses expenses={expenses} />
     </div>
   );
