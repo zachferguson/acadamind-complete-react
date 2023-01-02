@@ -10,16 +10,13 @@ const NewExpense = (props) => {
   const [showAddNewExpense, setShowAddNewExpense] = useState(false);
   let hideExpenseForm = () => setShowAddNewExpense(false);
   let showExpenseForm = () => setShowAddNewExpense(true);
-  console.log(showAddNewExpense);
   if (!showAddNewExpense) {
-    console.log("hiding new expense form");
     return (
       <div className="new-expense">
         <button onClick={showExpenseForm}>Add Expense</button>
       </div>
     );
   } else {
-    console.log("showing new expense form");
     return (
       <div className="new-expense">
         <ExpenseForm

@@ -11,13 +11,13 @@ const initialExpenses = [
   },
   {
     id: "e2",
-    date: new Date(2022, 11, 9),
+    date: new Date(2022, 10, 9),
     title: "Hairspray.",
     amount: 49.33,
   },
   {
     id: "e3",
-    date: new Date(2022, 11, 8),
+    date: new Date(2022, 2, 8),
     title: "Hammer Pants",
     amount: 183.29,
   },
@@ -49,19 +49,9 @@ const App = () => {
     });
   };
 
-  // const[showAddNewExpense, setShowAddNewExpense] = useState(false);
-  // const addShowAddNewExpenseHandler = (showAddNewExpense) => {
-  //   setShowAddNewExpense(previousState => {
-
-  //   })
-  //};
-
   return (
     <div>
-      <NewExpense
-        onAddExpense={addExpenseHandler}
-        //showExpenses={false}
-      />
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses expenses={expenses} />
     </div>
   );
